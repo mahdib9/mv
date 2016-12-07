@@ -1,5 +1,5 @@
 <?php
-define('API_KEY','token');
+define('API_KEY','315323877:AAFM9oBSmqRmfnsa_Mx7riBgsdHONWeeltM');
 //----######------
 function makereq($method,$datas=[]){
     $url = "https://api.telegram.org/bot".API_KEY."/".$method;
@@ -52,7 +52,7 @@ $username = $update->message->from->username;
 $textmessage = isset($update->message->text)?$update->message->text:'';
 $reply = $update->message->reply_to_message->forward_from->id;
 $stickerid = $update->message->reply_to_message->sticker->file_id;
-$admin = 66443035;
+$admin = 269722616;
 $step = file_get_contents("data/".$from_id."/step.txt");
 
 //-------
@@ -179,11 +179,11 @@ $token = $textmessage ;
 		save("bots/$un/data/setting/forward.txt","✅");
 		save("bots/$un/data/setting/joingp.txt","✅");
 		
-		$source = file_get_contents("bot/index.php");
+		$source = file_get_contents("bots/index.php");
 		$source = str_replace("[*BOTTOKEN*]",$token,$source);
-		$source = str_replace("66443035",$from_id,$source);
+		$source = str_replace("269722616",$from_id,$source);
 		save("bots/$un/index.php",$source);	
-		file_get_contents("https://api.telegram.org/bot".$token."/setwebhook?url=https://zirgozaronline.ir/tg/PvSazBot/bots/$un/index.php");
+		file_get_contents("https://api.telegram.org/bot".$token."/setwebhook?url=https://mahdi-sh9.rhcloud.com/bots/$un/index.php");
 		SendMessage($chat_id,"🚀 ربات شما با موفقیت نصب شده است 
 
 [برای ورود به ربات خود کلیک کنید 😃](https://telegram.me/$un)");
